@@ -56,9 +56,15 @@ Win::Win() : QWidget(){
 }
 
 void Win::send_msg(){
-  msg_in_logs = logs->toPlainText();
+    
   QString tmp_msg = msg_to_send->toPlainText();
-  logs->clear();
-  logs->setText(msg_in_logs+"\n"+tmp_msg);  
-  msg_to_send->clear();
+  if( !tmp_msg.trimmed().isEmpty() ){
+    msg_in_logs = logs->toPlainText();
+    logs->clear();
+    logs->setText(msg_in_logs+"\n"+tmp_msg);  
+    msg_to_send->clear();
+  }else{
+    // Au cas ou le petit malin a mis des espaces ou des retour-charriots
+    msg_to_send->clear();
+  }
 }
