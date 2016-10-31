@@ -53,6 +53,13 @@ Win::Win() : QWidget(){
   test_hostname = QHostInfo::localHostName();
   people->setText(test_hostname);
 
+  /* setup socket - network part */
+  socket = new QTcpSocket(this);
+  socket->abort();
+  QString serv_ip = QString("127.0.0.1");
+  qint16 serv_port = qint16(24513);
+  socket->connectToHost(serv_ip, serv_port);
+
 }
 
 void Win::send_msg(){

@@ -25,6 +25,7 @@ class Win : public QWidget{
     int Win_length, Win_width;
     int off_border_x, off_border_y;
 
+
     QString msg_in_logs;
 
     QPushButton *btn_send_msg;
