@@ -5,6 +5,11 @@
 #include <QWidget>
 #include <QPushButton>
 
+/* test */
+#include <QLabel>
+#include <QTextEdit>
+#include <QString>
+
 class Win : public QWidget{
 
   Q_OBJECT
@@ -17,8 +22,16 @@ class Win : public QWidget{
     void solve_sudoku();
 
  private:
-  QPushButton *btn_load;
-  QPushButton *btn_solve;
+    int Win_length, Win_width;
+    int off_border_x, off_border_y;
+
+    QString msg_in_logs;
+
+    QPushButton *btn_load;
+    QPushButton *btn_solve;
+
+    QLabel *log_area;
+    QTextEdit *logs;
 };
 
 #endif
