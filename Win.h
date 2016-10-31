@@ -4,11 +4,11 @@
 #include <QApplication>
 #include <QWidget>
 #include <QPushButton>
-
-/* test */
-#include <QLabel>
 #include <QTextEdit>
 #include <QString>
+
+/* test */ 
+#include <QHostInfo>
 
 class Win : public QWidget{
 
@@ -30,8 +30,9 @@ class Win : public QWidget{
     QPushButton *btn_load;
     QPushButton *btn_solve;
 
-    QLabel *log_area;
     QTextEdit *logs;
+    QTextEdit *msg_to_send;
+    QTextEdit *people;
 };
 
 #endif

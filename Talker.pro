@@ -1,4 +1,4 @@
-QT += widgets
+QT += widgets core network
 
 HEADERS = Win.h
 
