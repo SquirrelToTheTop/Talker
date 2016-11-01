@@ -6,7 +6,9 @@
 #include <QPushButton>
 #include <QTextEdit>
 #include <QString>
+#include <QLabel>
 #include <QtNetwork>
+#include <QTextStream>
 
 /* test */ 
 #include <QHostInfo>
@@ -20,6 +22,7 @@ class Win : public QWidget{
 
   private slots:
     void send_msg();
+    void connect_to_server();
 
   private:
     int Win_length, Win_width;
@@ -28,10 +31,14 @@ class Win : public QWidget{
     QString msg_in_logs;
 
     QPushButton *btn_send_msg;
+    QPushButton *btn_connect;
 
     QTextEdit *logs;
     QTextEdit *msg_to_send;
     QTextEdit *people;
+    QTextEdit *ipAddress, *port;
+
+    QLabel *txt_serv;
 
     QTcpSocket *socket;
 };
